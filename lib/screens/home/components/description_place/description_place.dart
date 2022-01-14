@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/stars/star_rows.dart';
+import 'package:platzi_course/screens/home/components/stars/star_rows.dart';
 import 'package:platzi_course/shared/button.dart';
 
 class DesciptionPlace extends StatelessWidget {
@@ -40,7 +40,7 @@ class DesciptionPlace extends StatelessWidget {
       ),
     );
     return Container(
-      margin: const EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
+      margin: const EdgeInsets.only(top: 340.0, left: 20.0, right: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [titleStars, description, const Button(text: "Navegar")],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/stars/star.dart';
+import 'package:platzi_course/screens/home/components/stars/star.dart';
 
 class ShowStars extends StatelessWidget {
   ShowStars({Key? key, required this.numberStars, this.size = 22})

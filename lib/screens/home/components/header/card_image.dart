@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/floating_fav_button.dart/floating_fav_button.dart';
+import 'package:platzi_course/screens/home/components/floating_fav_button.dart/floating_fav_button.dart';
 
 class CardImage extends StatelessWidget {
   const CardImage({Key? key, this.pathImage = "assets/images/beach.jpeg"})

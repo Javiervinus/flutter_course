@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/header/card_image.dart';
+import 'package:platzi_course/screens/home/components/header/card_image.dart';
 
 class CardImageList extends StatelessWidget {
   const CardImageList({Key? key}) : super(key: key);

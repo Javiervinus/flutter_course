@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/stars/star_rows.dart';
+import 'package:platzi_course/screens/home/components/stars/star_rows.dart';
 
 class Review extends StatelessWidget {
   const Review(

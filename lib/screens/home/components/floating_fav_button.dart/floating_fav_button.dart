@@ -12,6 +12,7 @@ class _FloatingFavActionButtonState extends State<FloatingFavActionButton> {
   bool _pressed = false;
 
   void onPressedFav() {
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: _pressed
             ? const Text("Se quito de favoritos.")

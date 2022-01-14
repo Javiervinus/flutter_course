@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/header/gradiant_back.dart';
-import 'package:platzi_course/pages/home/components/header/header.dart';
-import 'components/description_place/description_place.dart';
-import 'components/reviews/review_list.dart';
+import 'package:platzi_course/screens/home/components/reviews/review_list.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+import 'description_place/description_place.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return Stack(children: [
-      ListView(children: PlaceInformation()),
-      const Header(),
-    ]);
-  }
-}
-
+// ignore: non_constant_identifier_names
 List<Widget> PlaceInformation() {
   List<Widget> informationReviews = [];
   informationReviews.add(const DesciptionPlace(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class GradiantBack extends StatelessWidget {
   const GradiantBack({Key? key}) : super(key: key);
-  final String title = "Popular";
+  final String title = "Bienvenido";
   @override
   Widget build(BuildContext context) {
     return Container(

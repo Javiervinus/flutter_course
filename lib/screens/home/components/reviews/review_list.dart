@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/pages/home/components/reviews/review.dart';
+import 'package:platzi_course/screens/home/components/reviews/review.dart';
 
 class ReviewList extends StatelessWidget {
   ReviewList({Key? key, required this.numberReviews}) : super(key: key);
