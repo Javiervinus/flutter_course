@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
-      home: const PlatziTripsCupertino(),
+      home: const App(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -41,11 +41,7 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   int _indexTap = 0;
-  final List<Widget> widgetsChildren = const [
-    Home(),
-    SearchTrips(),
-    ProfileTrips()
-  ];
+  final List<Widget> widgetsChildren = [Home(), SearchTrips(), ProfileTrips()];
   void onTapTapped(int index) {
     setState(() {
       _indexTap = index;

@@ -8,7 +8,6 @@ class Button extends StatelessWidget {
     return InkWell(
       onTap: () {
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
-
         ScaffoldMessenger.of(context)
             .showSnackBar(const SnackBar(content: Text("Navegando")));
       },
