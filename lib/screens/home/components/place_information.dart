@@ -11,7 +11,7 @@ List<Widget> PlaceInformation() {
     stars: 4.5,
   ));
   informationReviews.add(Container(
-      margin: const EdgeInsets.only(top: 20, left: 20),
+      margin: const EdgeInsets.only(top: 20, left: 20, bottom: 10),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
