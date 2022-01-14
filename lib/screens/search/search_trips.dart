@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/screens/home/components/reviews/review_list.dart';
 
 class SearchTrips extends StatefulWidget {
-  SearchTrips({Key? key}) : super(key: key);
+  const SearchTrips({Key? key}) : super(key: key);
 
   @override
   _SearchTripsState createState() => _SearchTripsState();
@@ -15,11 +14,12 @@ class _SearchTripsState extends State<SearchTrips> {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            leading: const Icon(Icons.arrow_back),
             centerTitle: true,
             pinned: true,
             snap: false,
             floating: false,
-            expandedHeight: 140.0,
+            expandedHeight: 220.0,
             backgroundColor: Colors.black,
             toolbarHeight: 50,
             flexibleSpace: FlexibleSpaceBar(
