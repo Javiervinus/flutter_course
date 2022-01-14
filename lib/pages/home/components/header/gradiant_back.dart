@@ -6,7 +6,7 @@ class GradiantBack extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        alignment: const Alignment(-0.9, -0.7),
+        alignment: const Alignment(-0.85, -0.6),
         height: 270,
         decoration: const BoxDecoration(
             gradient: LinearGradient(
