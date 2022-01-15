@@ -40,7 +40,7 @@ class DesciptionPlace extends StatelessWidget {
       ),
     );
     return Container(
-      margin: const EdgeInsets.only(top: 340.0, left: 20.0, right: 20.0),
+      margin: const EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [titleStars, description, const Button(text: "Navegar")],

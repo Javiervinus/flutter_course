@@ -13,7 +13,7 @@ class PlatziTripsCupertino extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: CupertinoTabScaffold(
         tabBar: CupertinoTabBar(
-            backgroundColor: Colors.white60,
+            backgroundColor: Colors.white70,
             activeColor: Colors.deepPurple,
             inactiveColor: Colors.grey,
             border: const Border(top: BorderSide.none),

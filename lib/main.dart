@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:platzi_course/screens/home/components/navigation_bar_cupertino.dart';
+import 'package:platzi_course/screens/espol/espol_login.dart';
 import 'package:platzi_course/screens/home/home.dart';
 import 'package:flutter/services.dart';
 import 'package:platzi_course/screens/profile/profile.dart';
@@ -15,8 +15,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+    //     overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
+
     SystemChrome.setSystemUIOverlayStyle(
-        const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+        SystemUiOverlayStyle(statusBarColor: Colors.black.withOpacity(0.15)));
 
     // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
     //     overlays: [SystemUiOverlay.bottom]);
@@ -24,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
       ),
       home: const App(),
       debugShowCheckedModeBanner: false,
@@ -41,7 +44,12 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   int _indexTap = 0;
-  final List<Widget> widgetsChildren = [Home(), SearchTrips(), ProfileTrips()];
+  final List<Widget> widgetsChildren = [
+    Home(),
+    SearchTrips(),
+    EspolLogin(),
+    ProfileTrips()
+  ];
   void onTapTapped(int index) {
     setState(() {
       _indexTap = index;
@@ -56,13 +64,15 @@ class _AppState extends State<App> {
         data: Theme.of(context)
             .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
         child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             onTap: onTapTapped,
             currentIndex: _indexTap,
-            showSelectedLabels: false, // <-- HERE
+            showSelectedLabels: false,
             showUnselectedLabels: false,
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
               BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.login), label: ""),
               BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
             ]),
       ),

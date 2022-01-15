@@ -11,7 +11,7 @@ class CardImage extends StatelessWidget {
       alignment: const Alignment(0.9, 1.1),
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 80, left: 20),
+          margin: const EdgeInsets.only(top: 120, left: 20),
           height: 350,
           width: 250,
           decoration: BoxDecoration(

@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 
 class GradiantBack extends StatelessWidget {
-  const GradiantBack({Key? key}) : super(key: key);
-  final String title = "Bienvenido";
+  GradiantBack(
+      {Key? key,
+      this.height = 270,
+      this.title = "Bienvenido",
+      required this.child})
+      : super(key: key);
+  final String title;
+  final double height;
+  final Widget child;
+
   @override
   Widget build(BuildContext context) {
     return Container(
         alignment: const Alignment(-0.85, -0.6),
-        height: 270,
+        height: height,
         decoration: const BoxDecoration(
             gradient: LinearGradient(
                 colors: [Color(0xFF4268D3), Color(0XFF584CD1)],
-                begin: FractionalOffset(0.3, 0),
-                end: FractionalOffset(1, 0),
-                stops: [0, 0.6],
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                stops: [0.5, 1],
                 tileMode: TileMode.clamp)),
-        child: Text(
-          title,
-          style: const TextStyle(
-              color: Colors.white,
-              fontSize: 30,
-              fontFamily: "Lato",
-              fontWeight: FontWeight.bold),
-        ));
+        child: child);
   }
 }

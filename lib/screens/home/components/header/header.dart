@@ -8,7 +8,23 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: const [GradiantBack(), CardImageList()],
+      children: [
+        GradiantBack(
+          child: headerElement(),
+        ),
+        CardImageList()
+      ],
+    );
+  }
+
+  Text headerElement() {
+    return const Text(
+      "Bienvenido",
+      style: TextStyle(
+          color: Colors.white,
+          fontSize: 30,
+          fontFamily: "Lato",
+          fontWeight: FontWeight.bold),
     );
   }
 }
