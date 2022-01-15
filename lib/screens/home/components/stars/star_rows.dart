@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:platzi_course/screens/home/components/stars/star.dart';
 
+// ignore: must_be_immutable
 class ShowStars extends StatelessWidget {
   ShowStars({Key? key, required this.numberStars, this.size = 22})
       : super(key: key);
@@ -10,13 +11,12 @@ class ShowStars extends StatelessWidget {
   List<Widget> rowStarsBorder = [];
   List<Widget> finalStars = [];
 
-  @override
-  Widget build(BuildContext context) {
+  List<Widget> drawStars() {
     if (numberStars > 5) {
       for (var i = 0; i < 5; i++) {
         rowStars.add(const Star(fill: true));
       }
-      return Row(children: rowStars);
+      return rowStars;
     }
     for (var i = 0; i < numberStars.floor(); i++) {
       rowStars.add(Star(
@@ -42,6 +42,12 @@ class ShowStars extends StatelessWidget {
       }
       finalStars = [...rowStars, ...rowStarsBorder];
     }
-    return Row(children: finalStars);
+
+    return finalStars;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: drawStars());
   }
 }

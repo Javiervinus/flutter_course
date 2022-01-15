@@ -17,8 +17,6 @@ class _SearchTripsState extends State<SearchTrips> {
             leading: const Icon(Icons.arrow_back),
             centerTitle: true,
             pinned: true,
-            snap: false,
-            floating: false,
             expandedHeight: 220.0,
             backgroundColor: Colors.black,
             toolbarHeight: 50,
