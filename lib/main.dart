@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_course/screens/calculadora/calculadora.dart';
 import 'package:platzi_course/screens/espol/espol_login.dart';
 import 'package:platzi_course/screens/home/home.dart';
 import 'package:flutter/services.dart';
@@ -26,9 +27,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
+      theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: "lato"),
       home: const App(),
       debugShowCheckedModeBanner: false,
     );
@@ -48,7 +47,8 @@ class _AppState extends State<App> {
     Home(),
     SearchTrips(),
     EspolLogin(),
-    ProfileTrips()
+    ProfileTrips(),
+    // Calculadora()
   ];
   void onTapTapped(int index) {
     setState(() {
@@ -74,6 +74,7 @@ class _AppState extends State<App> {
               BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
               BottomNavigationBarItem(icon: Icon(Icons.login), label: ""),
               BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+              // BottomNavigationBarItem(icon: Icon(Icons.calculate), label: ""),
             ]),
       ),
     );

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FloatingFavActionButton extends StatefulWidget {
-  const FloatingFavActionButton({Key? key}) : super(key: key);
-
+  const FloatingFavActionButton({Key? key, this.size = 24}) : super(key: key);
+  final double size;
   @override
   _FloatingFavActionButtonState createState() =>
       _FloatingFavActionButtonState();
@@ -28,7 +28,10 @@ class _FloatingFavActionButtonState extends State<FloatingFavActionButton> {
       onPressed: onPressedFav,
       backgroundColor: const Color(0xFF11DA53),
       mini: true,
-      child: Icon(_pressed ? Icons.favorite : Icons.favorite_border),
+      child: Icon(
+        _pressed ? Icons.favorite : Icons.favorite_border,
+        size: widget.size,
+      ),
     );
   }
 }

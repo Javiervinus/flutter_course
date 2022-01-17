@@ -13,7 +13,12 @@ class Home extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          Container(color: Colors.white, child: const Header()),
+          Container(
+            decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(width: 0, color: Colors.white)),
+            child: const Header(),
+          ),
           Container(
               color: Colors.white, child: Column(children: PlaceInformation())),
         ],

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_course/screens/home/components/floating_fav_button.dart/floating_fav_button.dart';
+import 'package:platzi_course/screens/home/components/header/card_image.dart';
 import 'package:platzi_course/screens/home/components/header/gradiant_back.dart';
 import 'package:platzi_course/screens/home/components/reviews/review.dart';
 import 'package:platzi_course/screens/profile/components/bottons_row.dart';
+import 'package:platzi_course/screens/profile/components/place.dart';
 import 'package:platzi_course/screens/profile/components/profile_details.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -9,16 +12,12 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        GradiantBack(
-          height: 350,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-            child: ProfileDetail(),
-          ),
-        ),
-      ],
+    return GradiantBack(
+      height: 380,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
+        child: ProfileDetail(),
+      ),
     );
   }
 }
