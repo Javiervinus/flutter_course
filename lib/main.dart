@@ -50,7 +50,8 @@ class TabPage extends StatelessWidget {
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
         return SalomonBottomBar(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          margin:
+              const EdgeInsets.only(left: 20, right: 20, bottom: 40, top: 3),
           currentIndex: tabsRouter.activeIndex,
           onTap: tabsRouter.setActiveIndex,
           items: [
