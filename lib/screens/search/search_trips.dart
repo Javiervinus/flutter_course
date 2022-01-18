@@ -1,13 +1,15 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
-class SearchTrips extends StatefulWidget {
-  const SearchTrips({Key? key}) : super(key: key);
-
+class SearchTripsPage extends StatefulWidget {
+  const SearchTripsPage({
+    Key? key,
+  }) : super(key: key);
   @override
   _SearchTripsState createState() => _SearchTripsState();
 }
 
-class _SearchTripsState extends State<SearchTrips> {
+class _SearchTripsState extends State<SearchTripsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

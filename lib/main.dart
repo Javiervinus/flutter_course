@@ -1,11 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:platzi_course/routes/app_router.dart';
-import 'package:platzi_course/screens/calculadora/calculadora.dart';
-import 'package:platzi_course/screens/espol/espol_login.dart';
-import 'package:platzi_course/screens/home/home.dart';
 import 'package:flutter/services.dart';
-import 'package:platzi_course/screens/profile/profile.dart';
-import 'package:platzi_course/screens/search/search_trips.dart';
+import 'package:platzi_course/routes/app_router.gr.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +15,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-    //     overlays: [SystemUiOverlay.top, SystemUiOverlay.bottom]);
-
     SystemChrome.setSystemUIOverlayStyle(
         SystemUiOverlayStyle(statusBarColor: Colors.black.withOpacity(0.15)));
 
@@ -28,58 +22,54 @@ class MyApp extends StatelessWidget {
     //     overlays: [SystemUiOverlay.bottom]);
 
     return MaterialApp.router(
-      routerDelegate: _appRouter.delegate(),
-      title: 'Flutter Demo',
-      routeInformationParser: _appRouter.defaultRouteParser(),
-      theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: "lato"),
-      debugShowCheckedModeBanner: false,
-    );
+        debugShowCheckedModeBanner: false,
+        title: "Curso",
+        theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: "lato"),
+        routeInformationParser: _appRouter.defaultRouteParser(),
+        routerDelegate: _appRouter.delegate());
   }
 }
 
-class App extends StatefulWidget {
-  const App({Key? key}) : super(key: key);
-
-  @override
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-  int _indexTap = 0;
-  final List<Widget> widgetsChildren = [
-    const HomePage(),
-    SearchTrips(),
-    EspolLogin(),
-    ProfileTripsPage(),
-    // Calculadora()
-  ];
-  void onTapTapped(int index) {
-    setState(() {
-      _indexTap = index;
-    });
-  }
+class TabPage extends StatelessWidget {
+  const TabPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: widgetsChildren[_indexTap],
-      bottomNavigationBar: Theme(
-        data: Theme.of(context)
-            .copyWith(canvasColor: Colors.white, primaryColor: Colors.purple),
-        child: BottomNavigationBar(
-            type: BottomNavigationBarType.fixed,
-            onTap: onTapTapped,
-            currentIndex: _indexTap,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-              BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-              BottomNavigationBarItem(icon: Icon(Icons.login), label: ""),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-              // BottomNavigationBarItem(icon: Icon(Icons.calculate), label: ""),
-            ]),
-      ),
+    return AutoTabsScaffold(
+      // appBarBuilder: (_, tabsRouter) => AppBar(
+      //   backgroundColor: Colors.indigo,
+      //   title: const Text("fullter"),
+      //   centerTitle: true,
+      //   leading: const AutoBackButton(),
+      // ),
+      routes: [
+        HomeRouter(),
+        EspolRouter(),
+        const ProfileRouter(),
+        SearchRouter(),
+      ],
+      bottomNavigationBuilder: (_, tabsRouter) {
+        return SalomonBottomBar(
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          itemPadding: const EdgeInsets.all(4),
+          currentIndex: tabsRouter.activeIndex,
+          onTap: tabsRouter.setActiveIndex,
+          items: [
+            SalomonBottomBarItem(
+                selectedColor: Colors.indigo,
+                icon: const Icon(Icons.home),
+                title: const Text("")),
+            SalomonBottomBarItem(
+                selectedColor: Colors.indigo,
+                icon: const Icon(Icons.unarchive_rounded),
+                title: const Text("")),
+            SalomonBottomBarItem(
+                selectedColor: Colors.indigo,
+                icon: const Icon(Icons.person),
+                title: const Text("")),
+          ],
+        );
+      },
     );
   }
 }

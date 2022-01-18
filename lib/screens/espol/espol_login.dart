@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 const primary = Color(0XFF223263);
 
-class EspolLogin extends StatelessWidget {
-  EspolLogin({Key? key}) : super(key: key);
+class EspolLoginPage extends StatelessWidget {
+  EspolLoginPage({Key? key}) : super(key: key);
   final userController = TextEditingController();
   final passwordController = TextEditingController();
   @override

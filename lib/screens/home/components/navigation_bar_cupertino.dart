@@ -43,10 +43,7 @@ class PlatziTripsCupertino extends StatelessWidget {
               return CupertinoTabView(
                 builder: (BuildContext context) => const HomePage(),
               );
-            case 1:
-              return CupertinoTabView(
-                builder: (BuildContext context) => SearchTrips(),
-              );
+
             case 2:
               return CupertinoTabView(
                 builder: (BuildContext context) => ProfileTripsPage(),

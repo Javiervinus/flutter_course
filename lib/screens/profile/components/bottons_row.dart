@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:platzi_course/routes/app_router.dart';
+import 'package:platzi_course/routes/app_router.gr.dart';
 
 class ButtonRows extends StatefulWidget {
   ButtonRows({Key? key}) : super(key: key);
@@ -7,7 +10,9 @@ class ButtonRows extends StatefulWidget {
   _ButtonRowsState createState() => _ButtonRowsState();
 }
 
-void onPressed() {}
+onPressed(context) {
+  // AutoRouter.of(context).navigate(NavegarRoute(id: 3));
+}
 
 class _ButtonRowsState extends State<ButtonRows> {
   @override
@@ -38,7 +43,7 @@ class _ButtonRowsState extends State<ButtonRows> {
             backgroundColor: Colors.white,
             foregroundColor: Colors.indigo,
             mini: true,
-            onPressed: onPressed,
+            onPressed: onPressed(context),
             child: Icon(
               icon,
               size: 26,

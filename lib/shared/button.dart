@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:platzi_course/routes/app_router.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:platzi_course/routes/app_router.gr.dart';
+import 'package:platzi_course/screens/navegar/navegar.dart';
+import 'package:platzi_course/screens/profile/components/header.dart';
 
 class Button extends StatefulWidget {
   const Button({Key? key, required this.text}) : super(key: key);
@@ -15,8 +17,10 @@ class _ButtonState extends State<Button> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        AutoRouter.of(context).push(const NavegarRoute());
-        // context.pushRoute(NavegarRoute());
+        AutoRouter.of(context).pushWidget(const NavegarPage(
+          desde: "Home",
+        ));
+        // context.pushRoute(ProfileTripsRoute());
       },
       child: Hero(
         tag: "unico_id",

@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:platzi_course/routes/app_router.dart';
+import 'package:platzi_course/routes/app_router.gr.dart';
 
 class ButtomNavegar extends StatefulWidget {
   ButtomNavegar({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class _ButtomNavegarState extends State<ButtomNavegar> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        AutoRouter.of(context).push(ProfileTripsRoute());
+        AutoRouter.of(context).navigate(EspolRouter());
         ScaffoldMessenger.of(context).hideCurrentSnackBar();
         ScaffoldMessenger.of(context)
             .showSnackBar(const SnackBar(content: Text("Navegando")));
@@ -33,11 +34,14 @@ class _ButtomNavegarState extends State<ButtomNavegar> {
                   end: FractionalOffset(1, 0.6),
                   stops: [0, 0.6],
                   tileMode: TileMode.clamp)),
-          child: Center(
+          child: const Center(
             child: Text(
               "to profile",
-              style: const TextStyle(
-                  fontSize: 18, fontFamily: "Lato", color: Colors.white),
+              style: TextStyle(
+                  decoration: TextDecoration.none,
+                  fontSize: 18,
+                  fontFamily: "Lato",
+                  color: Colors.white),
             ),
           ),
         ),

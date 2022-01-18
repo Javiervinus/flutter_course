@@ -23,8 +23,10 @@ class DesciptionPlace extends StatelessWidget {
             margin: const EdgeInsets.only(right: 20.0),
             child: Text(namePlace,
                 style: const TextStyle(
+                    color: Colors.black,
                     fontSize: 30.0,
                     fontWeight: FontWeight.w900,
+                    decoration: TextDecoration.none,
                     fontFamily: "Lato"),
                 textAlign: TextAlign.left),
           ),
