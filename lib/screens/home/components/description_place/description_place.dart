@@ -17,14 +17,17 @@ class DesciptionPlace extends StatelessWidget {
   Widget build(BuildContext context) {
     final titleStars = Row(
       children: [
-        Container(
-          margin: const EdgeInsets.only(right: 20.0),
-          child: Text(namePlace,
-              style: const TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w900,
-                  fontFamily: "Lato"),
-              textAlign: TextAlign.left),
+        Hero(
+          tag: "texto",
+          child: Container(
+            margin: const EdgeInsets.only(right: 20.0),
+            child: Text(namePlace,
+                style: const TextStyle(
+                    fontSize: 30.0,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: "Lato"),
+                textAlign: TextAlign.left),
+          ),
         ),
         ShowStars(numberStars: stars)
       ],

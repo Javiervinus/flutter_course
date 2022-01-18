@@ -26,7 +26,7 @@ class CardImage extends StatelessWidget {
                     offset: Offset(0, 7)),
               ]),
         ),
-        const FloatingFavActionButton(),
+        // const FloatingFavActionButton(),
       ],
     );
   }

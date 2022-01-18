@@ -5,8 +5,8 @@ import 'package:platzi_course/screens/profile/components/place.dart';
 import 'package:platzi_course/shared/container_app.dart';
 import 'package:fading_edge_scrollview/fading_edge_scrollview.dart';
 
-class ProfileTrips extends StatelessWidget {
-  ProfileTrips({Key? key}) : super(key: key);
+class ProfileTripsPage extends StatelessWidget {
+  ProfileTripsPage({Key? key}) : super(key: key);
   final _scrollController = ScrollController();
   Container exp() {
     return Container(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:platzi_course/routes/app_router.dart';
 import 'package:platzi_course/screens/calculadora/calculadora.dart';
 import 'package:platzi_course/screens/espol/espol_login.dart';
 import 'package:platzi_course/screens/home/home.dart';
@@ -7,11 +8,12 @@ import 'package:platzi_course/screens/profile/profile.dart';
 import 'package:platzi_course/screens/search/search_trips.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
 
   // This widget is the root of your application.
   @override
@@ -25,10 +27,11 @@ class MyApp extends StatelessWidget {
     // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
     //     overlays: [SystemUiOverlay.bottom]);
 
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
       title: 'Flutter Demo',
+      routeInformationParser: _appRouter.defaultRouteParser(),
       theme: ThemeData(primarySwatch: Colors.indigo, fontFamily: "lato"),
-      home: const App(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -44,10 +47,10 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   int _indexTap = 0;
   final List<Widget> widgetsChildren = [
-    Home(),
+    const HomePage(),
     SearchTrips(),
     EspolLogin(),
-    ProfileTrips(),
+    ProfileTripsPage(),
     // Calculadora()
   ];
   void onTapTapped(int index) {

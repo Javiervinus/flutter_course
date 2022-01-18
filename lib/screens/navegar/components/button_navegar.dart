@@ -1,22 +1,23 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:platzi_course/routes/app_router.dart';
-import 'package:auto_route/auto_route.dart';
 
-class Button extends StatefulWidget {
-  const Button({Key? key, required this.text}) : super(key: key);
-  final String text;
+class ButtomNavegar extends StatefulWidget {
+  ButtomNavegar({Key? key}) : super(key: key);
 
   @override
-  _ButtonState createState() => _ButtonState();
+  _ButtomNavegarState createState() => _ButtomNavegarState();
 }
 
-class _ButtonState extends State<Button> {
+class _ButtomNavegarState extends State<ButtomNavegar> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        AutoRouter.of(context).push(const NavegarRoute());
-        // context.pushRoute(NavegarRoute());
+        AutoRouter.of(context).push(ProfileTripsRoute());
+        ScaffoldMessenger.of(context).hideCurrentSnackBar();
+        ScaffoldMessenger.of(context)
+            .showSnackBar(const SnackBar(content: Text("Navegando")));
       },
       child: Hero(
         tag: "unico_id",
@@ -34,7 +35,7 @@ class _ButtonState extends State<Button> {
                   tileMode: TileMode.clamp)),
           child: Center(
             child: Text(
-              widget.text,
+              "to profile",
               style: const TextStyle(
                   fontSize: 18, fontFamily: "Lato", color: Colors.white),
             ),

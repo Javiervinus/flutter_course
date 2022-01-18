@@ -25,6 +25,7 @@ class _FloatingFavActionButtonState extends State<FloatingFavActionButton> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      heroTag: "",
       onPressed: onPressedFav,
       backgroundColor: const Color(0xFF11DA53),
       mini: true,
